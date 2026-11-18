@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+struct Employee {
+    char name[50];
+    int id;
+    struct Date joiningDate;
+};
+
+int main() {
+    struct Employee e;
+
+    printf("Enter Employee Name: ");
+    scanf("%s", e.name);
+
+    printf("Enter Employee ID: ");
+    scanf("%d", &e.id);
+
+    printf("Enter Joining Date (DD MM YYYY): ");
+    scanf("%d %d %d", &e.joiningDate.day,
+                       &e.joiningDate.month,
+                       &e.joiningDate.year);
+
+    printf("\nName: %s | ID: %d | Joining Date: %02d/%02d/%d\n",
+           e.name,
+           e.id,
+           e.joiningDate.day,
+           e.joiningDate.month,
+           e.joiningDate.year);
+
+    return 0;
+}
